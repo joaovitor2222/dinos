@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo dos Dinossauros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Simulador de Batalha de Dinossauros</h1>
+
+    <label>Orçamento: R$ <span id="orcamento">100000</span></label>
+
+    <h2>Escolha a dificuldade:</h2>
+    <button onclick="definirDificuldade('personalizado')">Personalizado</button>
+    <button onclick="definirDificuldade('facil')">Fácil</button>
+    <button onclick="definirDificuldade('medio')">Médio</button>
+    <button onclick="definirDificuldade('dificil')">Difícil</button>
+
+
+    <h2>Escolha seus dinossauros defensores</h2>
+    <div id="listaDinosCompra"></div>
+    <button onclick="confirmarDinos()">Confirmar Dinossauros</button>
+    
+    <h2>Atacantes Selecionados</h2>
+    <div id="ataque"></div>
+    
+
+    <h2>Poder Total</h2>
+    <div class="power-bar">
+        <div id="power-player" class="power-fill"></div>
+    </div>
+    
+    <h2>Poder do Inimigo</h2>
+    <div class="power-bar">
+        <div id="power-enemy" class="power-fill"></div>
+    </div>
+
+    <h2>Vender Dinossauro</h2>
+    <label for="tipoVenda">Tipo:</label>
+    <select id="tipoVenda">
+    <option value="defesa">Defesa</option>
+    <option value="ataque">Ataque</option>
+    </select>
+
+    <label for="dinoVenda">Dinossauro:</label>
+    <input type="text" id="dinoVenda" placeholder="Nome do dinossauro">
+
+    <button onclick="venderDinoHTML()">Vender</button>
+    <button onclick="venderTudo()">Vender Tudo</button>
+
+
+    <button onclick="simularBatalha()">Simular Batalha</button>
+
+    <!-- Mod Menu -->
+<div id="modMenu" style="display: none;">
+    <img id="emojiClick" src="https://images.emojiterra.com/google/android-pie/512px/1f928.png" alt="Emoji" style="width: 50px; cursor: pointer;">
+    <div id="modoTrapaça" style="display: none; margin-top: 20px;">
+        <button id="adicionarOrcamento" onclick="adicionarOrcamentoTrap()">Adicionar R$500.000</button>
+        <p>Modo Trapaça Ativado!</p>
+    </div>
+</div>
+
+
+    <h2>Lista de Dinossauros Disponíveis</h2>
+    <ul id="listaDinos">
+    <li>Argentinossauro - R$ 75.000</li>
+    <li>Titanossauro - R$ 80.000</li>
+    <li>Branquiossauro - R$ 72.000</li>
+    <li>Diplodoco - R$ 70.000</li>
+    <li>Apatossauro - R$ 74.000</li>
+
+    <li>T-Rex - R$ 38.000</li>
+    <li>Giganotossauro - R$ 36.000</li>
+    <li>Spinossauro - R$ 34.000</li>
+
+    <li>Carnotauro - R$ 7.475</li>
+    <li>Ceratossauro - R$ 6.900</li>
+    <li>Alossauro - R$ 8.050</li>
+
+    <li>Velociraptor - R$ 2.000</li>
+    <li>Dimetrodonte - R$ 2.500</li>
+    <li>Iguanodonte - R$ 4.600</li>
+
+    <li>Triceratops - R$ 10.350</li>
+    <li>Estiracossauro - R$ 10.120</li>
+
+    <li>Oxalaia - R$ 5.750</li>
+    <li>Pycnonemosaurus - R$ 6.900</li>
+</ul>
+
+<!-- Link para o tutorial na parte inferior direita do jogo -->
+<div style="position: fixed; bottom: 20px; right: 20px;">
+    <a href="tutorial.html" style="font-size: 18px; padding: 10px 20px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 5px;">Tutorial</a>
+</div>
+
+
+<p>Criado por <a href="https://www.youtube.com/@ArturGamesMods_OFC" target="_blank">Artur Games e Mods</a> e <a href="https://www.youtube.com/channel/UChhnrd9feaQj-66jUhFNmOg" target="_blank">Isobu2222</a> com ajuda do <a href="https://chatgpt.com" target="_blank">ChatGPT</a> e Isobu2222 <br>
+    Créditos de zoeira mas espero q divirtam! </p>
+
+    <p><strong>Canais Parceiros:</strong>  
+        <a href="https://www.youtube.com/@loftcraft348" target="_blank">Loft Craft</a>,  
+        <a href="https://www.youtube.com/@brazilianyt-nf8" target="_blank">Arabian Brazilian Proasso</a>,  
+        <a href="https://www.youtube.com/@RIOBALL300" target="_blank">RIOBALL🇧🇷 (AG)</a>,  
+        <a href="https://www.youtube.com/@vitorneves1162" target="_blank">Vitor Neves</a>,  
+        <a href="https://www.youtube.com/@CarlosDanielCountryballsytMa" target="_blank">Carlos Daniel Countryballs㋡</a>,  
+        <a href="https://www.youtube.com/@china_balloficialseinscreva" target="_blank">China Ball Oficial</a>,  
+        <a href="https://www.youtube.com/@Duanzitoy" target="_blank">Duanzitoyyy</a>,  
+        <a href="https://www.youtube.com/@Paraguaibola" target="_blank">🇵🇾Paraguai Bota</a>,  
+        <a href="https://www.youtube.com/@WhiteBalls" target="_blank">_WhiteBalls01</a>,  
+        <a href="https://www.youtube.com/@RaposaBrasileiraYT" target="_blank">Raposa Brasileira Edits</a>,  
+        <a href="https://www.youtube.com/@cauarsmos1345" target="_blank">Cauã Rsmos Country</a>,  
+        <a href="https://www.youtube.com/@brasilball_01" target="_blank">Brasil Ball</a>.</p>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

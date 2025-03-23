@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.power-bar {
+    width: 300px;
+    height: 20px;
+    background-color: #ddd;
+    border: 1px solid #000;
+    margin: 10px auto;
+    position: relative;
+}
+
+#modMenu {
+    position: fixed;  /* Fixa o menu na tela */
+    bottom: 20px;     /* Fixa o menu 20px acima da parte inferior */
+    left: 10%;        /* Muda a posição para a esquerda da tela */
+    transform: translateX(0);  /* Remove a centralização, ajustando para o valor de 'left' */
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#emojiClick {
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#modoTrapaça {
+    display: none;
+    margin-top: 20px;
+}
+
+#adicionarOrcamento {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#adicionarOrcamento:hover {
+    background-color: #45a049;
+}
+
+
+.power-fill {
+    height: 100%;
+    width: 0%;
+    background-color: green;
+    transition: width 0.5s ease;
+}
