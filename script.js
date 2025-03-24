@@ -6,11 +6,11 @@ let dificuldade = "personalizado";
 let clickCount = 0;
 
 const dinos = {
-    "Argentinossauro": { poder: 100000, preco: 75000, tipo: "sauropode" },
-    "Titanossauro": { poder: 120000, preco: 80000, tipo: "sauropode" },
-    "Branquiossauro": { poder: 80000, preco: 72000, tipo: "sauropode" },
+    "Argentinossauro": { poder: 120000, preco: 75000, tipo: "sauropode" },
+    "Titanossauro": { poder: 140000, preco: 80000, tipo: "sauropode" },
+    "Branquiossauro": { poder: 100000, preco: 74000, tipo: "sauropode" },
     "Diplodoco": { poder: 85000, preco: 70000, tipo: "sauropode" },
-    "Apatossauro": { poder: 90000, preco: 74000, tipo: "sauropode" },
+    "Apatossauro": { poder: 90000, preco: 72000, tipo: "sauropode" },
 
     "T-Rex": { poder: 40000, preco: 38000, tipo: "grande", solitario: true },
     "Giganotossauro": { poder: 39000, preco: 36000, tipo: "grande", bando: true },
@@ -27,7 +27,7 @@ const dinos = {
     "Triceratops": { poder: 25000, preco: 10350, tipo: "medio", defensivo: true }, // 15% a mais
     "Estiracossauro": { poder: 24000, preco: 10120, tipo: "medio", bando: true }, // 15% a mais
 
-    "Oxalaia": { poder: 22000, preco: 5750, tipo: "grande" }, // 15% a mais
+    "Oxalaia": { poder: 24000, preco: 5750, tipo: "grande" }, // 15% a mais
     "Pycnonemosaurus": { poder: 25000, preco: 6900, tipo: "grande" } // 15% a mais
 };
 
