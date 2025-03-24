@@ -75,7 +75,7 @@ function escolherDinosIA() {
                 let novosPrecos = {
                     "Titanossauro": 80000,
                     "Argentinossauro": 75000,
-                    "Branquiossauro": 72000,
+                    "Branquiossauro": 74000,
                     "Diplodoco": 70000
                 };
                 dino.preco = novosPrecos[nome] || dino.preco;
@@ -125,7 +125,7 @@ function escolherDinosIA() {
 // Atualizar preços para balanceamento
 function ajustarPrecos() {
     let novosPrecos = {
-        "Titanossauro": 80000, "Argentinossauro": 75000, "Branquiossauro": 72000, "Diplodoco": 70000,
+        "Titanossauro": 80000, "Argentinossauro": 75000, "Branquiossauro": 74000, "Diplodoco": 70000,
         "T-Rex": 38000, "Giganotossauro": 36000, "Spinossauro": 34000, "Alossauro": 7000, "Carnotauro": 6500,
         "Ceratossauro": 6000, "Triceratops": 9000, "Estiracossauro": 8800
     };
