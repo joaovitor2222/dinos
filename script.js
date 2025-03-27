@@ -5,6 +5,7 @@ let exercitoAtaque = [];
 let dificuldade = "personalizado";
 let clickCount = 0;
 let exercito = [];
+let contagemDinos = {};
 
 const dinos = {
     "Argentinossauro": { poder: 120000, preco: 75000, tipo: "sauropode" },
