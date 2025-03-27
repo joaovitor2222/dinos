@@ -4,6 +4,7 @@ let exercitoDefesa = [];
 let exercitoAtaque = [];
 let dificuldade = "personalizado";
 let clickCount = 0;
+let exercito = [];
 
 const dinos = {
     "Argentinossauro": { poder: 120000, preco: 75000, tipo: "sauropode" },
@@ -153,9 +154,21 @@ function adicionarDino(tipo, nome) {
         }
         atualizarOrcamento();
         calcularPoder();
+        atualizarListaTime();
     } else {
         alert("Orçamento insuficiente!");
     }
+}
+
+function atualizarListaTime() {
+    let lista = document.getElementById("listaTime");
+    lista.innerHTML = ""; // Limpa antes de atualizar
+
+    exercito.forEach(dino => {
+        let item = document.createElement("li");
+        item.textContent = `${dino.nome} x${dino.qtd}`;
+        lista.appendChild(item);
+    });
 }
 
 // Vender um dinossauro para recuperar orçamento
