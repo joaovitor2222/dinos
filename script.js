@@ -197,8 +197,9 @@ function atualizarListaTime() {
 
     // Adicionar dinossauros de defesa
     Object.entries(contagem2).forEach(([nome, qtd]) => {
+        let dinoInfo = dinos[nome];  // Acesse o objeto do dinossauro para garantir que o nome esteja correto
         let item = document.createElement("li");
-        item.textContent = `${nome} x${qtd}`;
+        item.textContent = `${dinoInfo.nome} x${qtd}`; // Usando o nome do objeto dinossauro
         lista.appendChild(item);
     });
 
@@ -221,11 +222,13 @@ function atualizarListaTime() {
 
     // Adicionar dinossauros de ataque
     Object.entries(contagem2).forEach(([nome, qtd]) => {
+        let dinoInfo = dinos[nome];  // Acesse o objeto do dinossauro para garantir que o nome esteja correto
         let item = document.createElement("li");
-        item.textContent = `${nome} x${qtd}`;
+        item.textContent = `${dinoInfo.nome} x${qtd}`; // Usando o nome do objeto dinossauro
         lista.appendChild(item);
     });
 }
+
 
 // Vender um dinossauro para recuperar orçamento
 function venderDino(tipo, nome) {
