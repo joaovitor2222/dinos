@@ -178,8 +178,15 @@ function adicionarDino(tipo, nome) {
 function atualizarListaTime() {
     let lista = document.getElementById("listaTime");
     lista.innerHTML = ""; // Limpa antes de atualizar
+
+    // Criar cabeçalhos para Defesa e Ataque
+    let headerDefesa = document.createElement("h3");
+    headerDefesa.textContent = "Dinossauros de Defesa";
+    lista.appendChild(headerDefesa);
+
     let contagem2 = {};
 
+    // Contar os dinossauros no exército de defesa
     exercitoDefesa.forEach(dino => {
         if (contagem2[dino.nome]) {
             contagem2[dino.nome]++;
@@ -187,6 +194,21 @@ function atualizarListaTime() {
             contagem2[dino.nome] = 1;
         }
     });
+
+    // Adicionar dinossauros de defesa
+    Object.entries(contagem2).forEach(([nome, qtd]) => {
+        let item = document.createElement("li");
+        item.textContent = `${nome} x${qtd}`;
+        lista.appendChild(item);
+    });
+
+    // Limpar contagem2 para os dinossauros de ataque
+    contagem2 = {};
+
+    // Criar um cabeçalho para Ataque
+    let headerAtaque = document.createElement("h3");
+    headerAtaque.textContent = "Dinossauros de Ataque";
+    lista.appendChild(headerAtaque);
 
     // Contar os dinossauros no exército de ataque
     exercitoAtaque.forEach(dino => {
@@ -197,7 +219,7 @@ function atualizarListaTime() {
         }
     });
 
-    // Adicionar os dinossauros contados na lista
+    // Adicionar dinossauros de ataque
     Object.entries(contagem2).forEach(([nome, qtd]) => {
         let item = document.createElement("li");
         item.textContent = `${nome} x${qtd}`;
