@@ -145,13 +145,27 @@ function ajustarPrecos() {
 // Adicionar um dinossauro ao exército
 function adicionarDino(tipo, nome) {
     let dino = dinos[nome];
+    if (!dino) {
+        alert("Dinossauro não encontrado!");
+        return;
+    }
+
     if (orcamento >= dino.preco) {
         orcamento -= dino.preco;
+        
         if (tipo === "defesa") {
             exercitoDefesa.push(dino);
         } else {
             exercitoAtaque.push(dino);
         }
+
+        // Atualiza a contagem
+        if (contagemDinos[nome]) {
+            contagemDinos[nome]++;
+        } else {
+            contagemDinos[nome] = 1;
+        }
+
         atualizarOrcamento();
         calcularPoder();
         atualizarListaTime();
